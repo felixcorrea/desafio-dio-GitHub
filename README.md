@@ -2,6 +2,6 @@
 Desafio de Projeto de Git/GitHub
 
 ## Links Úteis
-[Linguagem de Marcação] (https://www.markdownguide.org/)
+[Sintaxe Markdown](https://www.markdownguide.org/)
 
 
