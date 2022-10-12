@@ -1,1 +1,11 @@
 Arquivo para guardar anotações sobre algumas aulas
+
+alguns comandos usados no gitbash foram:
+
+git status ------> mostra informações sobre o processo atual de modificar o repositório
+
+git add .  ------> prepara todos os arquivos do diretório atual para subir para o GitHub
+git add -A ------> prepara todos os arquivos do diretório atual para subir para o GitHub
+git commit ------> prepara os arquivos adicionados para subir para o GitHub
+git commit -m "escrever mensagem aqui" ------> prepara os arquivos adicionados para subir para o GitHub e acrescenta uma mensagem
+git push origin main ------> é com esse comando que finalizamos o commit
