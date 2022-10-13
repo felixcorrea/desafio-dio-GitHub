@@ -1,0 +1,378 @@
+alguns comandos usados no dia 12:
+
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 33
+Server version: 8.0.31 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> connect;
+Connection id:    34
+Current database: *** NONE ***
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> create database felixdb;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use felixdb;
+Database changed
+mysql> create table usuarios (
+    -> id int auto_increment primarykey,
+    -> nome_user varchar(20),
+    -> id_empresa int
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primarykey,
+nome_user varchar(20),
+id_empresa int
+)' at line 2
+mysql>  show batabases
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'batabases' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| felixdb            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use felixdb;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> show tables
+    -> ;
+Empty set (0.00 sec)
+
+mysql> create table Pessoas(
+    -> id int auto_increment,
+    -> nome varchar(200)
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+mysql> create table Pessoas(
+    ->     -> id int auto_increment,
+    ->     -> nome varchar(200)
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> id int auto_increment,
+    -> nome varchar(200)' at line 2
+mysql>
+mysql>  create table Pessoas(
+    ->  id int auto_increment,
+    -> nome varchar(200)
+    -> );
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+mysql> create table Pessoas(
+    -> id int auto_increment primarykey,
+    -> nome varchar(200),
+    -> ano_nascimento int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primarykey,
+nome varchar(200),
+ano_nascimento int)' at line 2
+mysql> /c;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/c' at line 1
+mysql> /c
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/c' at line 1
+mysql> c;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'c' at line 1
+mysql> clear;
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create table Pessoas(
+    -> id int auto_increment,
+    -> nome varchar(200),
+    -> ano_nascimento int
+    -> primarykey(id)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primarykey(id)
+)' at line 5
+mysql> create table Pessoas(
+    -> id auto_increment,
+    -> nome varchar(200),
+    -> ano_nascimento int,
+    -> primarykey(id)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto_increment,
+nome varchar(200),
+ano_nascimento int,
+primarykey(id)
+)' at line 2
+mysql> create table Pessoas(
+    -> id integer auto_increment,
+    -> nome varchar(200),
+    -> ano_nascimento int
+    -> primarykey(id)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primarykey(id)
+)' at line 5
+mysql> create table Pessoas(
+    -> id int auto_increment,
+    -> ano_nascimento int,
+    -> nome varchar(200),
+    -> primarykey(id)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(id)' at line 5
+mysql> create table Pessoas(
+    -> id integer auto_increment,
+    -> ano_nascimento int,
+    -> nome varchar(200),
+    -> primary key(id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> show tables
+    -> ;
++-------------------+
+| Tables_in_felixdb |
++-------------------+
+| pessoas           |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from pessoas
+    -> ;
+Empty set (0.00 sec)
+
+mysql> insert into pessoas values(
+    -> 1995,
+    -> "Félix"
+    -> );
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into pessoas (nome, ano_nascimento) values ("Félix", 1995);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from pessoas
+    -> ;
++----+----------------+-------+
+| id | ano_nascimento | nome  |
++----+----------------+-------+
+|  1 |           1995 | Félix |
++----+----------------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into pessoas (
+    -> 1997, "Tom");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1997, "Tom")' at line 2
+mysql> insert INTO PESSOAS (NOME, ANO_NASCIMENTO)
+    -> VALUES ("Tom", 1997), ("Marina", 2000);
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from pessoas;
++----+----------------+--------+
+| id | ano_nascimento | nome   |
++----+----------------+--------+
+|  1 |           1995 | Félix  |
+|  2 |           1997 | Tom    |
+|  3 |           2000 | Marina |
++----+----------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> insert into pessoas (nome, ano_nascimeto)
+    -> values("Giorgia", 1996),
+    -> ("João Francisco", 1936)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 4
+mysql> insert into pessoas (nome, ano_nascimeto)
+    -> values("Giorgia", 1996),
+    -> ("João Francisco", 1936),
+    -> ("Lucia Tereza", 1941);
+ERROR 1054 (42S22): Unknown column 'ano_nascimeto' in 'field list'
+mysql> select * from pessoas;
++----+----------------+--------+
+| id | ano_nascimento | nome   |
++----+----------------+--------+
+|  1 |           1995 | Félix  |
+|  2 |           1997 | Tom    |
+|  3 |           2000 | Marina |
++----+----------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> insert into pessoas (nome, ano_nascimento) values
+    -> ("Giorgia Narciso", 1996),
+    -> ("João Francisco", 1936),
+    -> ("Lucia Tereza", 1941);
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from pessoas;
++----+----------------+-----------------+
+| id | ano_nascimento | nome            |
++----+----------------+-----------------+
+|  1 |           1995 | Félix           |
+|  2 |           1997 | Tom             |
+|  3 |           2000 | Marina          |
+|  4 |           1996 | Giorgia Narciso |
+|  5 |           1936 | João Francisco  |
+|  6 |           1941 | Lucia Tereza    |
++----+----------------+-----------------+
+6 rows in set (0.00 sec)
+
+mysql> select nome from pessoas;
++-----------------+
+| nome            |
++-----------------+
+| Félix           |
+| Tom             |
+| Marina          |
+| Giorgia Narciso |
+| João Francisco  |
+| Lucia Tereza    |
++-----------------+
+6 rows in set (0.00 sec)
+
+mysql> select nome from pessoas
+    -> order by(ano_nascimento);
++-----------------+
+| nome            |
++-----------------+
+| João Francisco  |
+| Lucia Tereza    |
+| Félix           |
+| Giorgia Narciso |
+| Tom             |
+| Marina          |
++-----------------+
+6 rows in set (0.00 sec)
+
+mysql> create table contato
+    -> (contato_nome varchar(100),
+    -> numero_celular int,
+    -> email varchar(100),
+    -> id int auto_increment,
+    -> primary key(id)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into contato (contato_nome,
+    -> numero_celular,
+    -> email) values
+    -> ("félix(eu)", 997747171, felixlessa100@gmail.com),
+    -> ("Tom(irmão)", 999888771, tom50lessa@gmail.com);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@gmail.com),
+("Tom(irmão)", 999888771, tom50lessa@gmail.com)' at line 4
+mysql> insert into contato (contato_nome,
+    -> numero_celular,
+    -> email) values
+    -> ("félix(eu)", 997747171, "felixlessa100@gmail.com"),
+    -> ("Tom(irmão)", 999888771, "tom50lessa@gmail.com"),
+    -> ("Nina(irmã)", 998877665, "marinalessa@gmail.com");
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> insert into contatos (contato_nome, numero_celular, email)
+    -> values
+    -> ("Giorgia(Amore)", 987698761, "giorgianarciso@gmail.com"),
+    -> ("JF(vô)", 987987871, "jfcarregal@gmail.com"),
+    -> ("LT(vó)", 912399123, "lulessa@gmail.com");
+ERROR 1146 (42S02): Table 'felixdb.contatos' doesn't exist
+mysql> insert into contato (contato_nome, numero_celular, email)
+    -> values
+    -> ("Giorgia(Amore)", 987698761, "giorgianarciso@gmail.com"),
+    -> ("JF(vô)", 987987871, "jfcarregal@gmail.com"),
+    -> ("LT(vó)", 912399123, "lulessa@gmail.com");
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from contato;
++----------------+----------------+--------------------------+----+
+| contato_nome   | numero_celular | email                    | id |
++----------------+----------------+--------------------------+----+
+| félix(eu)      |      997747171 | felixlessa100@gmail.com  |  1 |
+| Tom(irmão)     |      999888771 | tom50lessa@gmail.com     |  2 |
+| Nina(irmã)     |      998877665 | marinalessa@gmail.com    |  3 |
+| Giorgia(Amore) |      987698761 | giorgianarciso@gmail.com |  4 |
+| JF(vô)         |      987987871 | jfcarregal@gmail.com     |  5 |
+| LT(vó)         |      912399123 | lulessa@gmail.com        |  6 |
++----------------+----------------+--------------------------+----+
+6 rows in set (0.00 sec)
+
+mysql> select * from pessoas inner join ON contato id = id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON contato id = id' at line 1
+mysql> select * from pessoas inner join ON contato pessoas.id = contato.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON contato pessoas.id = contato.id' at line 1
+mysql> select nome, ano_nascimento from pessoas inner join ON contato pessoas.id = contato.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON contato pessoas.id = contato.id' at line 1
+mysql> select * from pessoas join ON contato pessoas.id = contato.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ON contato pessoas.id = contato.id' at line 1
+mysql> select pessoas.nome, contato.email from pessoas inner join contato ON pessoas.id = contato.id;
++-----------------+--------------------------+
+| nome            | email                    |
++-----------------+--------------------------+
+| Félix           | felixlessa100@gmail.com  |
+| Tom             | tom50lessa@gmail.com     |
+| Marina          | marinalessa@gmail.com    |
+| Giorgia Narciso | giorgianarciso@gmail.com |
+| João Francisco  | jfcarregal@gmail.com     |
+| Lucia Tereza    | lulessa@gmail.com        |
++-----------------+--------------------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from pessoas inner join contato ON pessoas.id = contato.id
+    -> ;
++----+----------------+-----------------+----------------+----------------+--------------------------+----+
+| id | ano_nascimento | nome            | contato_nome   | numero_celular | email                    | id |
++----+----------------+-----------------+----------------+----------------+--------------------------+----+
+|  1 |           1995 | Félix           | félix(eu)      |      997747171 | felixlessa100@gmail.com  |  1 |
+|  2 |           1997 | Tom             | Tom(irmão)     |      999888771 | tom50lessa@gmail.com     |  2 |
+|  3 |           2000 | Marina          | Nina(irmã)     |      998877665 | marinalessa@gmail.com    |  3 |
+|  4 |           1996 | Giorgia Narciso | Giorgia(Amore) |      987698761 | giorgianarciso@gmail.com |  4 |
+|  5 |           1936 | João Francisco  | JF(vô)         |      987987871 | jfcarregal@gmail.com     |  5 |
+|  6 |           1941 | Lucia Tereza    | LT(vó)         |      912399123 | lulessa@gmail.com        |  6 |
++----+----------------+-----------------+----------------+----------------+--------------------------+----+
+6 rows in set (0.00 sec)
